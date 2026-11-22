@@ -1,0 +1,30 @@
+def addition(n1, n2):
+    return n1 + n2
+
+def subtraction(n1, n2):
+    return n1 - n2
+
+def multiplication(n1, n2):
+    return n1 * n2
+
+def division(n1, n2):
+    return n1 / n2
+
+
+n1 = float(input('Введите число: '))
+n2 = float(input('Введите число: '))
+oper = str(input('Введите оператор: +, -, *, /: '))
+res = 0
+
+if oper == '+':
+    res = addition(n1, n2)
+elif oper == '-':
+    res = subtraction(n1, n2)
+elif oper == '*':
+    res = multiplication(n1, n2)
+elif oper == '/':
+    res = division(n1, n2)
+else:
+    print('Ошибка')
+
+print(res)
