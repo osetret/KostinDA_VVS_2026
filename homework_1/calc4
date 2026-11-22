@@ -1,0 +1,18 @@
+class FuelCalculator:
+    def __init__(self, consumption: float, price: float):
+        self.consumption = consumption
+        self.price = price
+
+    def liters(self, distance: float):
+        return distance * self.consumption / 100
+
+    def cost(self, distance: float):
+        return self.liters(distance) * self.price
+if __name__ == "__main__":
+    consumption = float(input("Расход топлива (л/100 км): "))
+    price = float(input("Цена за литр (руб.): "))
+    distance = float(input("Дистанция (км): "))
+
+    calc = FuelCalculator(consumption, price)
+    print(f"Потребуется топлива: {calc.liters(distance):.2f} л")
+    print(f"Стоимость поездки: {calc.cost(distance):.2f} руб.")
