@@ -1,0 +1,33 @@
+def calculate(n1, operator, n2):
+    if operator == '+':
+        return n1 + n2
+    elif operator == '-':
+        return n1 - n2
+    elif operator == '*':
+        return n1 * n2
+    elif operator == '/':
+        if n2 == 0:
+            print('Ошибка: деление на ноль!')
+            return None
+        return n1 / n2
+    else:
+        print('Ошибка: неизвестная операция!')
+        return None
+
+
+res = float(input('Число: '))
+
+while True:
+    operation = input("Операция (+, -, *, /) или '=' для итога: ")
+
+    if operation == '=':
+        break
+
+    num = float(input('Число: '))
+    new_res = calculate(res, operation, num)
+
+    if new_res is not None:
+        res = new_res
+        print('Ответ:', res)
+
+print('Итог:', res)
